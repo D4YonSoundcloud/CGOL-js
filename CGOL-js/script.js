@@ -1,5 +1,7 @@
 //to do!
 //make each cell an object
+//allow to change speed (framerate) || DONE 6:49pm 5-19-20
+//allow each cell to be interactable
 
 function make2DArray(cols, rows) {
   let arr = new Array(cols);
@@ -15,7 +17,6 @@ function make2DArray(cols, rows) {
 //         this.y = y;
 //         this.state = this.state;
 //     }
-
 // }
 
 let grid;
@@ -27,7 +28,8 @@ let fr = 20;
 
 function setup() {
   let canvas = createCanvas(600, 400);
-//   canvas.center();
+  //   canvas.center();
+  console.log(fr);
   frameRate(fr);
   //generates each col and row based on the resolution, in this case 400/40 = 10 cols and 10 rows
   cols = width / resolution;
@@ -45,7 +47,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(255);
 
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
@@ -56,8 +58,8 @@ function draw() {
       let y = j * resolution;
       //fill alive cells with white
       if (grid[i][j] == 1) {
-        fill(255);
-        stroke(0);
+        fill(0);
+        stroke(255);
         rect(x, y, resolution - 1, resolution - 1);
       }
     }
@@ -100,6 +102,12 @@ function countNeighbors(grid, x, y) {
   return sum;
 }
 
+function changeSpeed(newFr) {
+  fr = newFr;
+  console.log("done");
+  console.log(fr);
+  setup().frameRate(fr);
+}
 //   sum += grid[i - 1][j - 1];
 //   sum += grid[i][j - 1];
 //   sum += grid[i + 1][j - 1];
