@@ -23,9 +23,12 @@ let cols;
 let rows;
 //resolution decides the size of each cell
 let resolution = 10;
+let fr = 20;
 
 function setup() {
-  createCanvas(600, 400);
+  let canvas = createCanvas(600, 400);
+//   canvas.center();
+  frameRate(fr);
   //generates each col and row based on the resolution, in this case 400/40 = 10 cols and 10 rows
   cols = width / resolution;
   rows = height / resolution;
