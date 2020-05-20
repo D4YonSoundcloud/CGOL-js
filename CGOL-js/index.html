@@ -22,14 +22,31 @@
 
     <div class="speed-buttons">
       <p>Change Speed</p>
-      <button onclick="changeSpeed(5)">.25x</button>
-      <button onclick="changeSpeed(10)">.50x</button>
-      <button onclick="changeSpeed(15)">.75x</button>
-      <button onclick="changeSpeed(20)">1x</button>
-      <button onclick="changeSpeed(25)">1.25x</button>
-      <button onclick="changeSpeed(30)">1.50x</button>
-      <button onclick="changeSpeed(35)">1.75x</button>
-      <button onclick="changeSpeed(40)">2.00x</button>
+      <button onclick="changeSpeed(5,  200)">.25x</button>
+      <button onclick="changeSpeed(10, 100)">.50x</button>
+      <button onclick="changeSpeed(15, 66)">.75x</button>
+      <button onclick="changeSpeed(20, 50)">1x</button>
+      <button onclick="changeSpeed(25, 40)">1.25x</button>
+      <button onclick="changeSpeed(30, 33)">1.50x</button>
+      <button onclick="changeSpeed(35, 29)">1.75x</button>
+      <button onclick="changeSpeed(40, 25)">2.00x</button>
+    </div>
+
+    <div class="rules" id="rules-container">
+      <button id="rules-button">Rules</button>
+      <div id="rules-div">
+        <p class="rules-text">
+          I: Any live cell with two or three live neighbours survives.
+        </p>
+        <p class="rules-text">
+          II: Any dead cell with three live neighbours becomes a live cell.
+        </p>
+        <p class="rules-text">
+          III: All other live cells die in the next generation. Similarly, all
+          other dead cells stay dead.
+        </p>
+      </div>
+
     </div>
   </body>
 </html>

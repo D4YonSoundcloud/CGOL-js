@@ -3,6 +3,7 @@
 //allow to change speed (framerate) || DONE 6:49pm 5-19-20
 //basic generation counter || DONE 12:40pm 5-19-20
 //allow each cell to be interactable
+//add rules tab
 
 function make2DArray(cols, rows) {
   let arr = new Array(cols);
@@ -27,6 +28,7 @@ let rows;
 let resolution = 10;
 //fr = framerate or generations/s
 let fr = 20;
+let intervalTimer = 50;
 let counter = 0;
 let newCount = 0;
 let interval;
@@ -36,7 +38,8 @@ function setup() {
   //   canvas.center();
   timer = createP();
   if (setInterval) counter = 0;
-  setInterval(timeIt, fr);
+  setInterval(timeIt, intervalTimer);
+  console.log(intervalTimer);
   console.log(fr);
   frameRate(fr);
   //generates each col and row based on the resolution, in this case 400/40 = 10 cols and 10 rows
@@ -119,13 +122,16 @@ function countNeighbors(grid, x, y) {
   return sum;
 }
 
-function changeSpeed(newFr) {
+function changeSpeed(newFr, newTimer) {
+  intervalTimer = newTimer;
   fr = newFr;
   console.log("done");
   console.log(fr);
+  console.log(intervalTimer);
+  setup().setInterval(timeIt, intervalTimer);
   setup().frameRate(fr);
-  setup().setInterval(timeIt, fr);
 }
+
 //   sum += grid[i - 1][j - 1];
 //   sum += grid[i][j - 1];
 //   sum += grid[i + 1][j - 1];
