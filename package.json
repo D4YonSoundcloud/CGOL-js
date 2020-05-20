@@ -1,0 +1,22 @@
+{
+  "name": "conway-game-of-life",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/D4YonSoundcloud/CGOL-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/D4YonSoundcloud/CGOL-js/issues"
+  },
+  "homepage": "https://D4YonSoundcloud.github.io/CGOL-js",
+  "dependencies": {
+    "gh-pages": "^2.2.0"
+  }
+}
