@@ -1,6 +1,7 @@
 //to do!
 //make each cell an object
 //allow to change speed (framerate) || DONE 6:49pm 5-19-20
+//basic generation counter || DONE 12:40pm 5-19-20
 //allow each cell to be interactable
 
 function make2DArray(cols, rows) {
@@ -24,11 +25,18 @@ let cols;
 let rows;
 //resolution decides the size of each cell
 let resolution = 10;
+//fr = framerate or generations/s
 let fr = 20;
+let counter = 0;
+let newCount = 0;
+let interval;
 
 function setup() {
   let canvas = createCanvas(600, 400);
   //   canvas.center();
+  timer = createP();
+  if (setInterval) counter = 0;
+  setInterval(timeIt, fr);
   console.log(fr);
   frameRate(fr);
   //generates each col and row based on the resolution, in this case 400/40 = 10 cols and 10 rows
@@ -44,6 +52,16 @@ function setup() {
       grid[i][j] = floor(random(2));
     }
   }
+}
+
+function timeIt() {
+  timer.html("Generation: " + counter);
+  timer.style("font-family", "Montserrat, sans-serif");
+  timer.style("margin", "auto");
+  timer.style("width", "100%");
+  timer.style("text-align", "center");
+  timer.style("transform", "translateY(60px)");
+  counter++;
 }
 
 function draw() {
@@ -83,7 +101,6 @@ function draw() {
       }
     }
   }
-
   grid = next;
 }
 
@@ -107,6 +124,7 @@ function changeSpeed(newFr) {
   console.log("done");
   console.log(fr);
   setup().frameRate(fr);
+  setup().setInterval(timeIt, fr);
 }
 //   sum += grid[i - 1][j - 1];
 //   sum += grid[i][j - 1];
