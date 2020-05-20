@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conways Game of Life</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="gameoflifeicon.png" />
+  </head>
+  <body>
+    <h1>John Conway's Game of Life</h1>
+    <h3>Rest in Peace , 26 December 1937 - 11 April 2020</h3>
+    <script src="script.js"></script>
+
+    <div class="speed-buttons">
+      <p>Change Speed</p>
+      <button onclick="changeSpeed(5,  200)">.25x</button>
+      <button onclick="changeSpeed(10, 100)">.50x</button>
+      <button onclick="changeSpeed(15, 66)">.75x</button>
+      <button onclick="changeSpeed(20, 50)">1x</button>
+      <button onclick="changeSpeed(25, 40)">1.25x</button>
+      <button onclick="changeSpeed(30, 33)">1.50x</button>
+      <button onclick="changeSpeed(35, 29)">1.75x</button>
+      <button onclick="changeSpeed(40, 25)">2.00x</button>
+    </div>
+
+    <div class="rules" id="rules-container">
+      <button id="rules-button">Rules</button>
+      <div id="rules-div">
+        <p class="rules-text">
+          I: Any live cell with two or three live neighbours survives.
+        </p>
+        <p class="rules-text">
+          II: Any dead cell with three live neighbours becomes a live cell.
+        </p>
+        <p class="rules-text">
+          III: All other live cells die in the next generation. Similarly, all
+          other dead cells stay dead.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
